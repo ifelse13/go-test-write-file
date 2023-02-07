@@ -8,7 +8,7 @@ import (
 )
 
 func main() {
-	if len(os.Args) < 1 {
+	if len(os.Args) <= 2 {
 		fmt.Println(help())
 		return
 	}
@@ -22,5 +22,5 @@ func main() {
 }
 
 func help() string {
-	return "Usage: `go run main.go /path/to/save  file/to/read`  or `./{{appName}} /path/to/save file/to/read`"
+	return "Help \nUsage: `go run main.go /path/to/save  file/to/read`  or `./{{appName}} /path/to/save file/to/read`"
 }

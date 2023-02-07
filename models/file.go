@@ -12,7 +12,7 @@ type File struct {
 }
 
 func ExportRowToFile(pathToSave string, row ExcelRow) error {
-	file := row.ParseToFile()
+	file := row.ParseToFile(pathToSave)
 	return exportToFile(file)
 
 }
