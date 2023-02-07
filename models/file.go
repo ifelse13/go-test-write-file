@@ -11,13 +11,7 @@ type File struct {
 	PathToSave string   `json:"path_to_save"`
 }
 
-func ExportRowToFile(pathToSave string, row ExcelRow) error {
-	file := row.ParseToFile(pathToSave)
-	return exportToFile(file)
-
-}
-
-func exportToFile(file File) error {
+func (file *File) exportToFile() error {
 	f, err := os.Create(file.FileName)
 	if err != nil {
 		log.Fatal(err)
@@ -34,4 +28,10 @@ func exportToFile(file File) error {
 		}
 	}
 	return nil
+}
+
+func ExportRowToFile(pathToSave string, row ExcelRow) error {
+	file := row.ParseToFile(pathToSave)
+	return file.exportToFile()
+
 }
