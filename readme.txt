@@ -1,6 +1,10 @@
 How to run code
 - go run main.go ./ ./phone-number-test-data.xlsx
 
+or
+
+- MAX_RETRIES=2 RETRY_TIME=60 WAIT_TIME=60 CONTEXT=cos-all go run main.go ./ ./phone-number-test-data.xlsx
+
 How to build application
 - go build -o {{AppName}} main.go
 
